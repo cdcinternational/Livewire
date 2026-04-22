@@ -34,11 +34,11 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link
-    href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:wght@300;400;500;600&display=swap"
+    href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap"
     rel="stylesheet" media="print" onload="this.media='all'">
   <noscript>
     <link
-      href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:wght@300;400;500;600&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap"
       rel="stylesheet">
   </noscript>
   <style>
@@ -105,7 +105,7 @@
     }
 
     body {
-      font-family: 'DM Sans', sans-serif;
+      font-family: 'Poppins', sans-serif;
       background: var(--bg);
       color: var(--text);
       overflow-x: hidden;
@@ -124,7 +124,7 @@
       display: flex;
       align-items: center;
       justify-content: space-between;
-      padding: 0 5%;
+      padding: 0 max(8%, (100% - 1200px) / 2);
       height: 72px;
       background: var(--nav-bg);
       backdrop-filter: blur(20px);
@@ -137,27 +137,16 @@
     }
 
     .logo {
-      font-family: 'Syne', sans-serif;
-      font-weight: 800;
-      font-size: 1.7rem;
-      letter-spacing: -0.04em;
-      color: var(--blue);
-      display: flex;
+      display: inline-flex;
       align-items: center;
-      gap: 8px;
       text-decoration: none;
+      flex-shrink: 0;
     }
 
-    .logo span {
-      color: var(--red);
-    }
-
-    .logo-pulse {
-      width: 10px;
-      height: 10px;
-      border-radius: 50%;
-      background: var(--red);
-      animation: pulse 1.4s ease-in-out infinite;
+    .logo img {
+      display: block;
+      height: 46px;
+      width: auto;
     }
 
     @keyframes pulse {
@@ -363,7 +352,7 @@
       display: grid;
       grid-template-columns: 1fr 1fr;
       align-items: center;
-      padding: 100px 5% 60px;
+      padding: 100px max(8%, (100% - 1200px) / 2) 60px;
       gap: 40px;
       background: linear-gradient(135deg, var(--bg) 0%, var(--bg2) 50%, var(--bg) 100%);
       position: relative;
@@ -406,7 +395,7 @@
     }
 
     h1 {
-      font-family: 'Syne', sans-serif;
+      font-family: 'Poppins', sans-serif;
       font-size: clamp(2.4rem, 4.5vw, 3.8rem);
       font-weight: 800;
       line-height: 1.1;
@@ -484,7 +473,7 @@
     }
 
     .stat-item h3 {
-      font-family: 'Syne', sans-serif;
+      font-family: 'Poppins', sans-serif;
       font-size: 1.75rem;
       font-weight: 800;
       color: var(--blue);
@@ -607,7 +596,7 @@
    SECTIONS COMMON
 ======================== */
     section {
-      padding: 96px 5%;
+      padding: 96px max(8%, (100% - 1200px) / 2);
     }
 
     .section-label {
@@ -621,7 +610,7 @@
     }
 
     .section-title {
-      font-family: 'Syne', sans-serif;
+      font-family: 'Poppins', sans-serif;
       font-size: clamp(1.7rem, 3.2vw, 2.6rem);
       font-weight: 800;
       line-height: 1.15;
@@ -718,7 +707,7 @@
     }
 
     .finder-question h3 {
-      font-family: 'Syne', sans-serif;
+      font-family: 'Poppins', sans-serif;
       font-size: 1.5rem;
       font-weight: 700;
       margin-bottom: 8px;
@@ -807,7 +796,7 @@
     }
 
     .result-course-name {
-      font-family: 'Syne', sans-serif;
+      font-family: 'Poppins', sans-serif;
       font-size: 1.7rem;
       font-weight: 800;
       margin-bottom: 8px;
@@ -931,7 +920,7 @@
     }
 
     .why-card h3 {
-      font-family: 'Syne', sans-serif;
+      font-family: 'Poppins', sans-serif;
       font-weight: 700;
       font-size: 1.05rem;
       margin-bottom: 8px;
@@ -1077,7 +1066,7 @@
     }
 
     .course-card-header h3 {
-      font-family: 'Syne', sans-serif;
+      font-family: 'Poppins', sans-serif;
       font-size: 1.1rem;
       font-weight: 700;
       line-height: 1.3;
@@ -1128,191 +1117,6 @@
       color: #fff;
     }
 
-    /* ========================
-   SKILLS VISUALIZATION
-======================== */
-    #skills-viz {
-      background: var(--bg2);
-    }
-
-    .skills-canvas-wrap {
-      position: relative;
-      height: 460px;
-      border-radius: 24px;
-      background: var(--card-bg);
-      border: 1px solid var(--border);
-      overflow: hidden;
-    }
-
-    canvas#skillsCanvas {
-      width: 100%;
-      height: 100%;
-    }
-
-    .skill-info-panel {
-      position: absolute;
-      right: 24px;
-      top: 50%;
-      transform: translateY(-50%);
-      background: var(--card-bg);
-      border-radius: 20px;
-      padding: 24px;
-      border: 1px solid var(--border);
-      width: 220px;
-      box-shadow: var(--shadow);
-      transition: all 0.3s;
-    }
-
-    .sip-title {
-      font-family: 'Syne', sans-serif;
-      font-weight: 700;
-      font-size: 1rem;
-      margin-bottom: 4px;
-    }
-
-    .sip-desc {
-      font-size: 0.8rem;
-      color: var(--text2);
-      margin-bottom: 14px;
-      line-height: 1.5;
-    }
-
-    .sip-tools {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 6px;
-    }
-
-    .sip-tool {
-      padding: 3px 10px;
-      border-radius: 50px;
-      font-size: 0.72rem;
-      font-weight: 600;
-      background: var(--blue-pale);
-      color: var(--blue);
-    }
-
-    .skills-hint {
-      text-align: center;
-      font-size: 0.82rem;
-      color: var(--text2);
-      margin-top: 16px;
-    }
-
-    /* ========================
-   STUDENT JOURNEY
-======================== */
-    #journey {
-      background: var(--bg3);
-    }
-
-    .journey-timeline {
-      position: relative;
-    }
-
-    .journey-timeline::before {
-      content: '';
-      position: absolute;
-      left: 50%;
-      top: 0;
-      bottom: 0;
-      width: 2px;
-      background: linear-gradient(to bottom, var(--blue), var(--red));
-      transform: translateX(-50%);
-    }
-
-    .journey-item {
-      display: grid;
-      grid-template-columns: 1fr 60px 1fr;
-      align-items: center;
-      margin-bottom: 40px;
-      gap: 0;
-    }
-
-    .journey-item:nth-child(even) .journey-content-left {
-      order: 3;
-    }
-
-    .journey-item:nth-child(even) .journey-spacer {
-      order: 2;
-    }
-
-    .journey-item:nth-child(even) .journey-content-right {
-      order: 1;
-    }
-
-    .journey-content-left,
-    .journey-content-right {
-      background: var(--card-bg);
-      border-radius: 20px;
-      padding: 24px;
-      border: 1px solid var(--border);
-      transition: all 0.3s;
-    }
-
-    .journey-content-left {
-      margin-right: 20px;
-    }
-
-    .journey-content-right {
-      margin-left: 20px;
-    }
-
-    .journey-content-left:hover,
-    .journey-content-right:hover {
-      box-shadow: var(--shadow-lg);
-      transform: scale(1.02);
-    }
-
-    .journey-dot {
-      width: 44px;
-      height: 44px;
-      border-radius: 50%;
-      z-index: 2;
-      background: linear-gradient(135deg, var(--blue), var(--blue-light));
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 1.2rem;
-      box-shadow: 0 0 0 6px var(--bg3);
-      margin: 0 auto;
-    }
-
-    .journey-phase {
-      font-size: 0.7rem;
-      font-weight: 700;
-      text-transform: uppercase;
-      letter-spacing: 0.1em;
-      color: var(--red);
-      margin-bottom: 6px;
-    }
-
-    .journey-title {
-      font-family: 'Syne', sans-serif;
-      font-weight: 700;
-      font-size: 1rem;
-      margin-bottom: 6px;
-    }
-
-    .journey-text {
-      font-size: 0.83rem;
-      color: var(--text2);
-      line-height: 1.5;
-      margin-bottom: 12px;
-    }
-
-    .salary-badge {
-      display: inline-flex;
-      align-items: center;
-      gap: 5px;
-      background: linear-gradient(135deg, #059669, #34d399);
-      color: #fff;
-      padding: 4px 12px;
-      border-radius: 50px;
-      font-size: 0.75rem;
-      font-weight: 700;
-    }
-
     .project-preview {
       background: var(--bg2);
       border-radius: 10px;
@@ -1321,180 +1125,7 @@
       color: var(--text2);
       margin-top: 8px;
       border: 1px solid var(--border);
-      font-family: monospace;
-    }
-
-    /* ========================
-   DASHBOARD PREVIEW
-======================== */
-    #dashboard-preview {
-      background: var(--bg);
-    }
-
-    .portal-mockup {
-      background: var(--card-bg);
-      border-radius: 28px;
-      border: 1px solid var(--border);
-      overflow: hidden;
-      box-shadow: var(--shadow-lg);
-    }
-
-    .portal-topbar {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      padding: 16px 24px;
-      background: var(--blue);
-      color: #fff;
-    }
-
-    .portal-topbar .logo-sm {
-      font-family: 'Syne', sans-serif;
-      font-weight: 800;
-      font-size: 1rem;
-    }
-
-    .portal-tabs {
-      display: flex;
-      gap: 4px;
-    }
-
-    .portal-tab {
-      padding: 7px 16px;
-      border-radius: 8px;
-      font-size: 0.8rem;
-      font-weight: 600;
-      cursor: pointer;
-      color: rgba(255, 255, 255, 0.7);
-      transition: all 0.2s;
-    }
-
-    .portal-tab.active,
-    .portal-tab:hover {
-      background: rgba(255, 255, 255, 0.15);
-      color: #fff;
-    }
-
-    .portal-body {
-      display: grid;
-      grid-template-columns: 200px 1fr;
-      min-height: 400px;
-    }
-
-    .portal-sidebar {
-      background: var(--bg2);
-      border-right: 1px solid var(--border);
-      padding: 20px 0;
-    }
-
-    .sidebar-item {
-      padding: 11px 20px;
-      display: flex;
-      align-items: center;
-      gap: 10px;
-      font-size: 0.83rem;
-      font-weight: 500;
-      color: var(--text2);
-      cursor: pointer;
-      transition: all 0.2s;
-    }
-
-    .sidebar-item:hover,
-    .sidebar-item.active {
-      background: var(--blue-pale);
-      color: var(--blue);
-    }
-
-    .portal-content {
-      padding: 24px;
-    }
-
-    .progress-section {
-      margin-bottom: 24px;
-    }
-
-    .progress-label {
-      display: flex;
-      justify-content: space-between;
-      font-size: 0.83rem;
-      font-weight: 600;
-      margin-bottom: 8px;
-    }
-
-    .progress-bar {
-      height: 8px;
-      background: var(--border);
-      border-radius: 50px;
-      overflow: hidden;
-    }
-
-    .progress-fill {
-      height: 100%;
-      border-radius: 50px;
-      background: linear-gradient(90deg, var(--blue), var(--blue-light));
-      transition: width 1.5s ease;
-      width: 0;
-    }
-
-    .code-mock {
-      background: var(--bg);
-      border-radius: 14px;
-      padding: 18px;
-      font-family: monospace;
-      font-size: 0.8rem;
-      line-height: 1.7;
-      border: 1px solid var(--border);
-      color: var(--text2);
-    }
-
-    .code-line-num {
-      color: var(--text2);
-      opacity: 0.4;
-      user-select: none;
-      margin-right: 12px;
-    }
-
-    .kw {
-      color: #818cf8;
-    }
-
-    .str {
-      color: #34d399;
-    }
-
-    .fn {
-      color: #f472b6;
-    }
-
-    .cm {
-      color: var(--text2);
-      opacity: 0.5;
-    }
-
-    .cert-preview {
-      background: linear-gradient(135deg, #1a3bcc, #e81c2a);
-      border-radius: 14px;
-      padding: 20px 24px;
-      color: #fff;
-      margin-top: 16px;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-    }
-
-    .cert-title {
-      font-family: 'Syne', sans-serif;
-      font-size: 1.1rem;
-      font-weight: 800;
-    }
-
-    .cert-sub {
-      font-size: 0.75rem;
-      opacity: 0.8;
-    }
-
-    .cert-seal {
-      font-size: 2.4rem;
+      font-family: 'Poppins', sans-serif;
     }
 
     /* ========================
@@ -1538,7 +1169,7 @@
     }
 
     .project-card-body h3 {
-      font-family: 'Syne', sans-serif;
+      font-family: 'Poppins', sans-serif;
       font-weight: 700;
       font-size: 1rem;
       margin-bottom: 6px;
@@ -1613,7 +1244,7 @@
     }
 
     .meter-selector h3 {
-      font-family: 'Syne', sans-serif;
+      font-family: 'Poppins', sans-serif;
       font-weight: 700;
       font-size: 1.2rem;
       margin-bottom: 20px;
@@ -1662,7 +1293,7 @@
     }
 
     .demand-label {
-      font-family: 'Syne', sans-serif;
+      font-family: 'Poppins', sans-serif;
       font-weight: 700;
       font-size: 1rem;
       margin-bottom: 12px;
@@ -1709,6 +1340,63 @@
       color: var(--text);
     }
 
+    /* ========================
+   RECRUITERS
+======================== */
+    #recruiters {
+      background: linear-gradient(180deg, var(--bg), var(--bg2));
+    }
+
+    .recruiter-shell {
+      background: var(--card-bg);
+      border: 1px solid var(--border);
+      border-radius: 28px;
+      padding: 32px;
+      box-shadow: var(--shadow);
+    }
+
+    .recruiter-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+      gap: 16px;
+    }
+
+    .recruiter-card {
+      min-height: 108px;
+      border-radius: 22px;
+      border: 1px solid var(--border);
+      background:
+        radial-gradient(circle at top, rgba(26, 59, 204, 0.06), transparent 55%),
+        var(--surface);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 18px;
+      transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+    }
+
+    .recruiter-card:hover {
+      transform: translateY(-4px);
+      border-color: rgba(26, 59, 204, 0.28);
+      box-shadow: 0 16px 36px rgba(26, 59, 204, 0.10);
+    }
+
+    .recruiter-card img {
+      width: 100%;
+      max-width: 120px;
+      max-height: 42px;
+      object-fit: contain;
+      filter: grayscale(1) contrast(1.05);
+      opacity: 0.84;
+      transition: filter 0.25s ease, opacity 0.25s ease, transform 0.25s ease;
+    }
+
+    .recruiter-card:hover img {
+      filter: grayscale(0);
+      opacity: 1;
+      transform: scale(1.03);
+    }
+
     .readiness-time {
       text-align: center;
       padding: 20px;
@@ -1719,7 +1407,7 @@
     }
 
     .readiness-time h4 {
-      font-family: 'Syne', sans-serif;
+      font-family: 'Poppins', sans-serif;
       font-size: 1.8rem;
       font-weight: 800;
     }
@@ -1760,16 +1448,21 @@
 
     .testi-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-      gap: 20px;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 350px));
+      gap: 24px;
+      justify-content: center;
     }
 
     .testi-card {
       background: var(--card-bg);
-      border-radius: 20px;
-      padding: 26px;
+      border-radius: 24px;
+      padding: 32px 28px;
       border: 1px solid var(--border);
       transition: all 0.3s;
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
     }
 
     .testi-card:hover {
@@ -1793,6 +1486,7 @@
 
     .testi-author {
       display: flex;
+      flex-direction: column;
       align-items: center;
       gap: 12px;
     }
@@ -1823,6 +1517,10 @@
 
     .av4 {
       background: linear-gradient(135deg, #059669, #34d399)
+    }
+
+    .author-info {
+      text-align: center;
     }
 
     .author-info h4 {
@@ -1933,7 +1631,7 @@
     }
 
     .enroll-step h3 {
-      font-family: 'Syne', sans-serif;
+      font-family: 'Poppins', sans-serif;
       font-size: 1.4rem;
       font-weight: 700;
       margin-bottom: 6px;
@@ -2000,7 +1698,7 @@
     }
 
     .batch-date {
-      font-family: 'Syne', sans-serif;
+      font-family: 'Poppins', sans-serif;
       font-weight: 700;
       font-size: 0.95rem;
       color: var(--text);
@@ -2045,7 +1743,7 @@
       color: var(--text);
       padding: 11px 14px;
       border-radius: 11px;
-      font-family: 'DM Sans', sans-serif;
+      font-family: 'Poppins', sans-serif;
       font-size: 0.88rem;
       outline: none;
       transition: border-color 0.2s;
@@ -2078,7 +1776,7 @@
     }
 
     .conf-title {
-      font-family: 'Syne', sans-serif;
+      font-family: 'Poppins', sans-serif;
       font-size: 1.5rem;
       font-weight: 800;
       margin-bottom: 6px;
@@ -2176,7 +1874,7 @@
     }
 
     .contact-form-wrap h3 {
-      font-family: 'Syne', sans-serif;
+      font-family: 'Poppins', sans-serif;
       font-size: 1.25rem;
       margin-bottom: 22px;
     }
@@ -2215,7 +1913,7 @@
       color: #fff;
       border: none;
       border-radius: 12px;
-      font-family: 'Syne', sans-serif;
+      font-family: 'Poppins', sans-serif;
       font-weight: 700;
       font-size: 1rem;
       cursor: pointer;
@@ -2246,22 +1944,21 @@
     footer {
       background: #06091a;
       color: rgba(255, 255, 255, 0.5);
-      padding: 36px 5%;
+      padding: 48px max(8%, (100% - 1200px) / 2);
       text-align: center;
       font-size: 0.83rem;
     }
 
     .ft-logo {
-      font-family: 'Syne', sans-serif;
-      font-size: 1.35rem;
-      font-weight: 800;
-      color: #fff;
-      margin-bottom: 7px;
-      display: block;
+      display: inline-block;
+      margin-bottom: 10px;
     }
 
-    .ft-logo span {
-      color: var(--red);
+    .ft-logo img {
+      display: block;
+      height: 52px;
+      width: auto;
+      margin: 0 auto;
     }
 
     /* ========================
@@ -2362,7 +2059,7 @@
     }
 
     .chat-header h4 {
-      font-family: 'Syne', sans-serif;
+      font-family: 'Poppins', sans-serif;
       font-weight: 700;
       font-size: 0.95rem;
     }
@@ -2452,7 +2149,7 @@
       border-radius: 50px;
       font-size: 0.83rem;
       outline: none;
-      font-family: 'DM Sans', sans-serif;
+      font-family: 'Poppins', sans-serif;
     }
 
     .chat-input-row input:focus {
@@ -2558,41 +2255,6 @@
         grid-template-columns: 1fr;
       }
 
-      .portal-body {
-        grid-template-columns: 1fr;
-      }
-
-      .portal-sidebar {
-        display: none;
-      }
-
-      .journey-timeline::before {
-        left: 30px;
-      }
-
-      .journey-item {
-        grid-template-columns: 60px 1fr;
-      }
-
-      .journey-content-right,
-      .journey-content-left {
-        grid-column: 2;
-        margin: 0 0 0 16px;
-      }
-
-      .journey-spacer {
-        grid-column: 1;
-      }
-
-      .journey-item:nth-child(even) .journey-content-left,
-      .journey-item:nth-child(even) .journey-content-right {
-        order: unset;
-      }
-
-      .journey-item:nth-child(even) .journey-spacer {
-        order: unset;
-      }
-
       .nav-links {
         display: none;
       }
@@ -2620,38 +2282,12 @@
         display: none;
       }
 
-      .skill-info-panel {
-        position: static;
-        transform: none;
-        width: auto;
-        margin-top: 12px;
-      }
-
-      .skills-canvas-wrap {
-        height: 300px;
-      }
     }
 
     /* ========================
    TABLET MID (≤ 640px)
 ======================== */
     @media(max-width:640px) {
-
-      /* Portal topbar: wrap on small tablets */
-      .portal-topbar {
-        flex-wrap: wrap;
-        gap: 8px;
-        padding: 10px 14px;
-      }
-
-      .portal-topbar>span:last-child {
-        display: none;
-      }
-
-      .portal-tabs {
-        width: 100%;
-        justify-content: center;
-      }
 
       /* Chat panel keeps full usable width */
       .chat-panel {
@@ -2668,9 +2304,17 @@
         padding: 64px 4%;
       }
 
+      .logo img {
+        height: 38px;
+      }
+
+      .ft-logo img {
+        height: 44px;
+      }
+
       /* Hero */
       #home {
-        padding-top: 88px;
+        padding: 88px 4% 40px;
         gap: 24px;
       }
 
@@ -2733,15 +2377,6 @@
         font-size: 0.62rem;
       }
 
-      /* Journey: collapse hidden spacer divs */
-      .journey-item {
-        grid-template-columns: 44px 1fr;
-      }
-
-      .journey-content-right[style*='visibility:hidden'],
-      .journey-content-left[style*='visibility:hidden'] {
-        display: none !important;
-      }
 
       /* Chat widget: keep panel within viewport */
       .chat-widget {
@@ -2808,8 +2443,7 @@
   <!-- NAV -->
   <nav id="navbar">
     <a class="logo" href="#home">
-      <div class="logo-pulse"></div>
-      Live<span>Wire</span>
+      <img src="livewirelogo.png" alt="Livewire Kasaragod logo">
     </a>
     <!-- Desktop nav links -->
     <ul class="nav-links">
@@ -2824,7 +2458,7 @@
     <div class="nav-right">
       <button class="theme-toggle" onclick="toggleTheme()" title="Toggle Dark/Light Mode"
         aria-label="Toggle dark and light mode"></button>
-      <a href="#enroll" class="nav-cta">Enroll Free</a>
+      <a href="#enroll" class="nav-cta">Enroll Now</a>
       <button class="hamburger" id="hamburgerBtn" onclick="toggleMenu(event)" aria-label="Open navigation menu"
         aria-expanded="false" aria-controls="mobileMenu"><span></span><span></span><span></span></button>
     </div>
@@ -2857,24 +2491,24 @@
         </p>
         <div class="hero-btns">
           <a href="#career-finder" class="btn-primary">🎯 Find My Course</a>
-          <a href="#dashboard-preview" class="btn-outline">Preview Portal</a>
+          <a href="#projects" class="btn-outline">View Projects</a>
         </div>
         <div class="hero-stats">
           <div class="stat-item">
-            <h3>1200+</h3>
-            <p>Students Placed</p>
+            <h3>100K</h3>
+            <p>Students Trained</p>
           </div>
           <div class="stat-item">
-            <h3>40+</h3>
-            <p>Expert Trainers</p>
+            <h3>35+</h3>
+            <p>Domains</p>
           </div>
           <div class="stat-item">
-            <h3>98%</h3>
-            <p>Satisfaction</p>
+            <h3>70</h3>
+            <p>Locations</p>
           </div>
           <div class="stat-item">
-            <h3>8 LPA</h3>
-            <p>Avg Salary</p>
+            <h3>1000+</h3>
+            <p>College Association</p>
           </div>
         </div>
       </div>
@@ -2926,8 +2560,8 @@
                 class="opt-icon">🔐</span>Cybersecurity</div>
             <div class="finder-opt" onclick="selectOpt(this,'interest','data')"><span class="opt-icon">📊</span>Data &
               Analytics</div>
-            <div class="finder-opt" onclick="selectOpt(this,'interest','cloud')"><span class="opt-icon">☁️</span>Cloud &
-              DevOps</div>
+            <div class="finder-opt" onclick="selectOpt(this,'interest','cloud')"><span class="opt-icon">☁️</span>AWS
+              Cloud</div>
           </div>
           <div class="finder-nav">
             <div></div><button class="btn-primary" onclick="nextQ(2)">Next →</button>
@@ -3021,13 +2655,13 @@
               companies.</div>
           </div>
           <div style="margin-bottom:16px;">
-            <div style="font-family:'Syne',sans-serif;font-weight:700;font-size:1rem;margin-bottom:12px;">📍 Your
+            <div style="font-family:'Poppins',sans-serif;font-weight:700;font-size:1rem;margin-bottom:12px;">📍 Your
               Learning
               Roadmap</div>
             <div class="result-roadmap" id="res-roadmap"></div>
           </div>
           <div>
-            <div style="font-family:'Syne',sans-serif;font-weight:700;font-size:1rem;margin-bottom:10px;">🛠 Skills
+            <div style="font-family:'Poppins',sans-serif;font-weight:700;font-size:1rem;margin-bottom:10px;">🛠 Skills
               You'll
               Master</div>
             <div class="skill-tags" id="res-skills"></div>
@@ -3206,11 +2840,11 @@
         <div class="course-card" data-cat="cloud">
           <div class="course-card-header ch-cloud"><span class="course-badge badge-cloud">Cloud</span><span
               class="course-icon">⚙️</span>
-            <h3>DevOps & CI/CD Pipeline</h3>
+            <h3>AWS Cloud Administration</h3>
           </div>
           <div class="course-card-body">
-            <p class="course-desc">Docker, Kubernetes, Jenkins, Terraform, Git workflows and monitoring with Grafana &
-              Prometheus.</p>
+            <p class="course-desc">AWS core services, IAM, VPC, EC2, storage, monitoring and cloud operations for
+              real-world infrastructure.</p>
             <div class="course-meta"><span>⏱ 3 Months</span><span>📊 Advanced</span><span>🏅 Certified</span></div><a
               href="#enroll" class="course-btn">Enroll Now →</a>
           </div>
@@ -3231,239 +2865,31 @@
     </section>
 
     <!-- ========================
-     5. SKILLS VISUALIZATION
+     RECRUITERS
 ======================== -->
-    <section id="skills-viz">
-      <div class="section-header">
-        <span class="section-label">Skills Map</span>
-        <h2 class="section-title">Click to Explore Our Tech Stack</h2>
-        <p class="section-sub">Hover or tap any node to see the tools and technologies you'll master in each domain.</p>
-      </div>
-      <div class="skills-canvas-wrap reveal">
-        <canvas id="skillsCanvas"></canvas>
-      </div>
-      <div class="skill-info-panel reveal" id="skillInfoPanel">
-        <div class="sip-title" id="sipTitle">Click a Node</div>
-        <div class="sip-desc" id="sipDesc">Click on any skill category above to see the specific tools you'll learn.
-        </div>
-        <div class="sip-tools" id="sipTools"></div>
-      </div>
-      <p class="skills-hint">👆 Click on any glowing node to explore tools in that domain</p>
-    </section>
-
-    <!-- ========================
-     3. STUDENT JOURNEY
-======================== -->
-    <section id="journey">
+    <section id="recruiters">
       <div class="section-header" style="text-align:center;">
-        <span class="section-label">Real Transformations</span>
-        <h2 class="section-title">The Livewire Student Journey</h2>
-        <p class="section-sub" style="margin:0 auto;">From zero to career-ready — follow the path our 1200+ graduates
-          have
-          walked.</p>
+        <h2 class="section-title">Prime Recruiters</h2>
       </div>
-      <div class="journey-timeline" style="margin-top:48px;">
-        <div class="journey-item reveal">
-          <div class="journey-content-left">
-            <div class="journey-phase">Phase 1 · Week 1</div>
-            <div class="journey-title">Orientation & Onboarding</div>
-            <div class="journey-text">Students join the course, set up their dev environment, and meet their mentor. The
-              learning portal is unlocked with interactive lessons and video content.</div>
-            <div class="project-preview">$ git clone livewire-starter-kit.git<br>✓ Environment setup complete!</div>
-          </div>
-          <div class="journey-spacer">
-            <div class="journey-dot">🌱</div>
-          </div>
-          <div class="journey-content-right" style="visibility:hidden;"></div>
-        </div>
-        <div class="journey-item reveal">
-          <div class="journey-content-left" style="visibility:hidden;"></div>
-          <div class="journey-spacer">
-            <div class="journey-dot">⚙️</div>
-          </div>
-          <div class="journey-content-right">
-            <div class="journey-phase">Phase 2 · Month 1–3</div>
-            <div class="journey-title">Core Skills & Live Projects</div>
-            <div class="journey-text">Hands-on modules, weekly assignments, code reviews. Students build 3 portfolio
-              projects with real data and mentor guidance.</div>
-            <div class="project-preview">📦 Project: AI Image Classifier<br>🛠 React Dashboard App<br>🔐 Vulnerability
-              Scanner</div>
-          </div>
-        </div>
-        <div class="journey-item reveal">
-          <div class="journey-content-left">
-            <div class="journey-phase">Phase 3 · Month 4–5</div>
-            <div class="journey-title">Internship & Industry Exposure</div>
-            <div class="journey-text">Selected students join partner company internships. Real work experience, industry
-              mentors, and a stipend. Your portfolio goes live.</div>
-            <div style="margin-top:10px;display:flex;gap:8px;flex-wrap:wrap;">
-              <span class="salary-badge">💰 ₹5,000–15,000/mo Stipend</span>
-            </div>
-          </div>
-          <div class="journey-spacer">
-            <div class="journey-dot">🏢</div>
-          </div>
-          <div class="journey-content-right" style="visibility:hidden;"></div>
-        </div>
-        <div class="journey-item reveal">
-          <div class="journey-content-left" style="visibility:hidden;"></div>
-          <div class="journey-spacer">
-            <div class="journey-dot">🎯</div>
-          </div>
-          <div class="journey-content-right">
-            <div class="journey-phase">Phase 4 · Month 6</div>
-            <div class="journey-title">Placement Prep & Interviews</div>
-            <div class="journey-text">Mock interviews, resume workshops, and LinkedIn optimization. Our team reaches out
-              to 50+ hiring partners on your behalf.</div>
-            <div class="project-preview">✅ 5 Interview Calls Lined Up<br>📄 Resume Score: 92/100</div>
-          </div>
-        </div>
-        <div class="journey-item reveal">
-          <div class="journey-content-left">
-            <div class="journey-phase">Phase 5 · Post-Course</div>
-            <div class="journey-title">Job Placement 🎉</div>
-            <div class="journey-text">Our average graduate receives an offer within 45 days of course completion. Many
-              land roles in Bangalore, Hyderabad, UAE and beyond.</div>
-            <div style="margin-top:10px;display:flex;gap:8px;flex-wrap:wrap;">
-              <span class="salary-badge">💰 ₹6–14 LPA Average Salary</span>
-            </div>
-          </div>
-          <div class="journey-spacer">
-            <div class="journey-dot">🚀</div>
-          </div>
-          <div class="journey-content-right" style="visibility:hidden;"></div>
+      <div class="recruiter-shell reveal">
+        <div class="recruiter-grid" aria-label="Recruiter logos">
+          <div class="recruiter-card"><img src="assets/recruiters/accenture-technology.webp" alt="Accenture Technology"></div>
+          <div class="recruiter-card"><img src="assets/recruiters/accentyre.webp" alt="Accentyre"></div>
+          <div class="recruiter-card"><img src="assets/recruiters/capgemini.webp" alt="Capgemini"></div>
+          <div class="recruiter-card"><img src="assets/recruiters/cognizant.webp" alt="Cognizant"></div>
+          <div class="recruiter-card"><img src="assets/recruiters/hcl.webp" alt="HCL"></div>
+          <div class="recruiter-card"><img src="assets/recruiters/ibm.webp" alt="IBM"></div>
+          <div class="recruiter-card"><img src="assets/recruiters/infosys.webp" alt="Infosys"></div>
+          <div class="recruiter-card"><img src="assets/recruiters/mindtree.webp" alt="Mindtree"></div>
+          <div class="recruiter-card"><img src="assets/recruiters/tcs.webp" alt="TCS"></div>
+          <div class="recruiter-card"><img src="assets/recruiters/tech-mahindra.webp" alt="Tech Mahindra"></div>
+          <div class="recruiter-card"><img src="assets/recruiters/wipro.webp" alt="Wipro"></div>
         </div>
       </div>
     </section>
 
     <!-- ========================
-     4. DASHBOARD PREVIEW
-======================== -->
-    <section id="dashboard-preview">
-      <div class="section-header flex-header">
-        <div>
-          <span class="section-label">Live Portal Preview</span>
-          <h2 class="section-title">Your Learning Dashboard<br>Awaits You</h2>
-          <p class="section-sub">Get a peek inside the student portal — code editor, progress tracker, and certification
-            system.</p>
-        </div>
-      </div>
-      <div class="portal-mockup reveal">
-        <div class="portal-topbar">
-          <span class="logo-sm">⚡ Livewire LMS</span>
-          <div class="portal-tabs">
-            <div class="portal-tab active" onclick="switchPortalTab(this,'learn')">📚 Learning</div>
-            <div class="portal-tab" onclick="switchPortalTab(this,'code')">💻 Code Lab</div>
-            <div class="portal-tab" onclick="switchPortalTab(this,'cert')">🏅 Certificate</div>
-          </div>
-          <span style="font-size:0.8rem;opacity:0.8;">👤 Welcome, Student</span>
-        </div>
-        <div class="portal-body">
-          <div class="portal-sidebar">
-            <div class="sidebar-item active">📊 Dashboard</div>
-            <div class="sidebar-item">🎥 Lessons</div>
-            <div class="sidebar-item">📝 Assignments</div>
-            <div class="sidebar-item">🏆 Achievements</div>
-            <div class="sidebar-item">💬 Community</div>
-            <div class="sidebar-item">📅 Schedule</div>
-          </div>
-          <div class="portal-content" id="portalContent">
-            <!-- Learn Tab (default) -->
-            <div id="tab-learn">
-              <div style="font-family:'Syne',sans-serif;font-weight:700;margin-bottom:16px;">Course Progress</div>
-              <div class="progress-section">
-                <div class="progress-label"><span>Python Fundamentals</span><span style="color:var(--blue)">85%</span>
-                </div>
-                <div class="progress-bar">
-                  <div class="progress-fill" data-width="85"></div>
-                </div>
-              </div>
-              <div class="progress-section">
-                <div class="progress-label"><span>Machine Learning Basics</span><span
-                    style="color:var(--blue)">62%</span>
-                </div>
-                <div class="progress-bar">
-                  <div class="progress-fill" data-width="62"></div>
-                </div>
-              </div>
-              <div class="progress-section">
-                <div class="progress-label"><span>Neural Networks</span><span style="color:var(--blue)">38%</span></div>
-                <div class="progress-bar">
-                  <div class="progress-fill" data-width="38"></div>
-                </div>
-              </div>
-              <div class="progress-section">
-                <div class="progress-label"><span>NLP &amp; Computer Vision</span><span style="color:var(--text2)">Not
-                    Started</span></div>
-                <div class="progress-bar">
-                  <div class="progress-fill" data-width="0"></div>
-                </div>
-              </div>
-              <div
-                style="margin-top:16px;padding:14px;background:var(--blue-pale);border-radius:12px;font-size:0.83rem;">
-                🔥 You're on a <strong>12-day streak!</strong> Keep going — you're in the top 10% of your batch.
-              </div>
-            </div>
-            <div id="tab-code" style="display:none">
-              <div style="font-family:'Syne',sans-serif;font-weight:700;margin-bottom:14px;">Code Lab — AI Model
-                Training
-              </div>
-              <div class="code-mock">
-                <div><span class="code-line-num">1</span><span class="cm"># Livewire AI Lab — Image Classifier</span>
-                </div>
-                <div><span class="code-line-num">2</span><span class="kw">import</span> tensorflow <span
-                    class="kw">as</span> tf</div>
-                <div><span class="code-line-num">3</span><span class="kw">from</span> tensorflow.keras <span
-                    class="kw">import</span> layers, models</div>
-                <div><span class="code-line-num">4</span>&nbsp;</div>
-                <div><span class="code-line-num">5</span><span class="cm"># Load and preprocess dataset</span></div>
-                <div><span class="code-line-num">6</span>model = models.<span class="fn">Sequential</span>([</div>
-                <div><span class="code-line-num">7</span>&nbsp;&nbsp;&nbsp;&nbsp;layers.<span
-                    class="fn">Conv2D</span>(<span class="str">32</span>, (<span class="str">3,3</span>),
-                  activation=<span class="str">'relu'</span>),</div>
-                <div><span class="code-line-num">8</span>&nbsp;&nbsp;&nbsp;&nbsp;layers.<span
-                    class="fn">MaxPooling2D</span>(),</div>
-                <div><span class="code-line-num">9</span>&nbsp;&nbsp;&nbsp;&nbsp;layers.<span
-                    class="fn">Flatten</span>(),
-                </div>
-                <div><span class="code-line-num">10</span>&nbsp;&nbsp;&nbsp;&nbsp;layers.<span
-                    class="fn">Dense</span>(<span class="str">10</span>, activation=<span class="str">'softmax'</span>)
-                </div>
-                <div><span class="code-line-num">11</span>])</div>
-                <div><span class="code-line-num">12</span>&nbsp;</div>
-                <div><span class="code-line-num">13</span>model.<span class="fn">compile</span>(optimizer=<span
-                    class="str">'adam'</span>, loss=<span class="str">'sparse_categorical_crossentropy'</span>)</div>
-                <div><span class="code-line-num">14</span><span class="cm"># ✓ Model compiled — 98.2% validation
-                    accuracy!</span></div>
-              </div>
-              <div
-                style="margin-top:12px;padding:10px 16px;background:rgba(52,211,153,0.1);border-radius:10px;border:1px solid rgba(52,211,153,0.25);font-size:0.82rem;color:#059669;font-family:monospace;">
-                ▶ Run Complete · Epoch 20/20 · acc: 0.982 · val_acc: 0.971 ✓
-              </div>
-            </div>
-            <div id="tab-cert" style="display:none">
-              <div style="font-family:'Syne',sans-serif;font-weight:700;margin-bottom:14px;">Your Certifications</div>
-              <div class="cert-preview">
-                <div>
-                  <div style="font-size:0.72rem;opacity:0.7;margin-bottom:4px;">LIVEWIRE IT INSTITUTE · KASARAGOD</div>
-                  <div class="cert-title">Certificate of Completion</div>
-                  <div class="cert-sub">AI & Machine Learning · Batch 2024–25</div>
-                  <div style="margin-top:12px;font-size:0.78rem;opacity:0.75;">Issued to: Student Name · ID:
-                    LW-2024-1187
-                  </div>
-                </div>
-                <div class="cert-seal">🏅</div>
-              </div>
-              <div style="margin-top:14px;font-size:0.83rem;color:var(--text2);">📄 Complete 90% of the course to unlock
-                your certificate. You're at 62% — keep going!</div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- ========================
-     7. PROJECTS SHOWCASE
+     PROJECTS SHOWCASE
 ======================== -->
     <section id="projects">
       <div class="section-header">
@@ -3534,11 +2960,11 @@
           <div class="project-preview-area" style="background:linear-gradient(135deg,#f0f9ff,#e0f2fe);">☁️</div>
           <div class="project-card-body">
             <h3>Cloud Infrastructure Automation</h3>
-            <p>Terraform scripts + CI/CD pipeline deploying a microservices app to AWS with auto-scaling and monitoring.
-            </p>
-            <div class="project-tools"><span class="tool-tag">Terraform</span><span class="tool-tag">AWS</span><span
-                class="tool-tag">Docker</span><span class="tool-tag">Jenkins</span></div>
-            <div class="project-meta"><span>DevOps track capstone</span><span
+            <p>AWS infrastructure setup with scalable deployment architecture, monitoring, storage, networking and
+              access control best practices.</p>
+            <div class="project-tools"><span class="tool-tag">AWS</span><span class="tool-tag">IAM</span><span
+                class="tool-tag">VPC</span><span class="tool-tag">CloudWatch</span></div>
+            <div class="project-meta"><span>AWS cloud capstone</span><span
                 class="diff-badge diff-advanced">Advanced</span></div>
           </div>
         </div>
@@ -3563,7 +2989,7 @@
             <div class="meter-opt" onclick="updateMeter(this,'webdev')">🌐 Full-Stack Development</div>
             <div class="meter-opt" onclick="updateMeter(this,'cyber')">🔐 Cybersecurity</div>
             <div class="meter-opt" onclick="updateMeter(this,'data')">📊 Data Science</div>
-            <div class="meter-opt" onclick="updateMeter(this,'cloud')">☁️ Cloud & DevOps</div>
+            <div class="meter-opt" onclick="updateMeter(this,'cloud')">☁️ AWS Cloud</div>
           </div>
         </div>
         <div class="meter-results" id="meterResults">
@@ -3613,46 +3039,31 @@
       <div class="testi-grid">
         <div class="testi-card reveal">
           <div class="stars" aria-hidden="true">★★★★★</div><span class="sr-only">5 out of 5 stars</span>
-          <p class="testi-text">"The AI/ML program was exceptional. Hands-on approach and mentorship helped me land a
-            role
-            at an MNC in Bangalore within 2 months."</p>
+          <p class="testi-text">"The AI/ML program at Livewire was life-changing. The hands-on projects and expert guidance helped me land a high-paying role in Bangalore within months."</p>
           <div class="testi-author">
-            <div class="author-avatar av1">AR</div>
+            <div class="author-avatar av1">JA</div>
             <div class="author-info">
-              <h4>Arjun Ramesh</h4><span>AI Engineer, Bangalore · ₹9.4 LPA</span>
+              <h4>Ahammed Jasim</h4><span>AI/ML · Remote · US Company</span>
             </div>
           </div>
         </div>
         <div class="testi-card reveal">
           <div class="stars" aria-hidden="true">★★★★★</div><span class="sr-only">5 out of 5 stars</span>
-          <p class="testi-text">"From zero coding knowledge to a full-stack developer in 6 months. The project-based
-            learning really made the difference!"</p>
+          <p class="testi-text">"I always wanted a career outside the regular 9-5 grind. Livewire's Full Stack program gave me the skills to thrive as a freelancer, managing my own projects and time with total freedom!"</p>
           <div class="testi-author">
-            <div class="author-avatar av2">FA</div>
+            <div class="author-avatar av2">AP</div>
             <div class="author-info">
-              <h4>Fathima Anas</h4><span>Full-Stack Dev, Kochi · ₹7.2 LPA</span>
+              <h4>Ashique Paika</h4><span>Full Stack Freelancer · Remote</span>
             </div>
           </div>
         </div>
         <div class="testi-card reveal">
           <div class="stars" aria-hidden="true">★★★★★</div><span class="sr-only">5 out of 5 stars</span>
-          <p class="testi-text">"The ethical hacking course gave me practical skills I immediately applied at work.
-            Cleared CEH on my first attempt!"</p>
+          <p class="testi-text">"Livewire provided the perfect environment to learn Full Stack Development. The mentors are industry experts who really care about your career success."</p>
           <div class="testi-author">
-            <div class="author-avatar av3">MK</div>
+            <div class="author-avatar av4">SH</div>
             <div class="author-info">
-              <h4>Mohammed Kareem</h4><span>Security Analyst, Dubai · ₹14 LPA</span>
-            </div>
-          </div>
-        </div>
-        <div class="testi-card reveal">
-          <div class="stars" aria-hidden="true">★★★★★</div><span class="sr-only">5 out of 5 stars</span>
-          <p class="testi-text">"Livewire's placement support is unmatched. They lined up 5 interviews. Now at a top IT
-            firm in Chennai from Kasaragod!"</p>
-          <div class="testi-author">
-            <div class="author-avatar av4">PS</div>
-            <div class="author-info">
-              <h4>Priya Suresh</h4><span>Data Scientist, Chennai · ₹11 LPA</span>
+              <h4>Shabna</h4><span>Full Stack Development · Chennai · ₹9.2 LPA</span>
             </div>
           </div>
         </div>
@@ -3699,7 +3110,6 @@
             <div class="course-pick" onclick="selectPick(this,'course','Ethical Hacking')">🔐 Hacking</div>
             <div class="course-pick" onclick="selectPick(this,'course','Cybersecurity')">🛡️ CyberSec</div>
             <div class="course-pick" onclick="selectPick(this,'course','AWS Cloud')">☁️ AWS Cloud</div>
-            <div class="course-pick" onclick="selectPick(this,'course','DevOps')">⚙️ DevOps</div>
             <div class="course-pick" onclick="selectPick(this,'course','Python')">🐍 Python</div>
           </div>
           <div class="enroll-nav">
@@ -3751,6 +3161,8 @@
               placeholder="you@email.com"></div>
           <div class="form-group"><label>Educational Background</label>
             <select>
+              <option>Below 10th</option>
+              <option>10th / SSLC</option>
               <option>12th / Higher Secondary</option>
               <option>Diploma</option>
               <option>B.Tech / BE</option>
@@ -3772,7 +3184,7 @@
               hours.
             </div>
             <a class="whatsapp-btn"
-              href="https://wa.me/919400000000?text=Hi%2C%20I%20just%20enrolled%20at%20Livewire%20Kasaragod!"
+              href="https://wa.me/917306318913?text=Hi%2C%20I%20just%20enrolled%20at%20Livewire%20Kasaragod!"
               target="_blank" rel="noopener">
               <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
                 <path
@@ -3782,7 +3194,7 @@
             </a>
           </div>
           <div style="text-align:center;font-size:0.85rem;color:var(--text2);">
-            📞 Expect a call from us at <strong>+91 94000 00000</strong> within 2 hours.<br>
+            📞 Expect a call from us at <strong>+91 73063 18913</strong> within 2 hours.<br>
             <a href="#courses" style="color:var(--blue);font-weight:600;">← Explore More Courses</a>
           </div>
         </div>
@@ -3805,31 +3217,30 @@
               <div class="ci-icon">📍</div>
               <div class="ci-text">
                 <h4>Location</h4>
-                <p>Livewire IT Training Institute,<br>Main Road, Kasaragod, Kerala – 671121</p>
+                <p>3rd Floor, Square 9 Mall,<br>New Bus Stand Jn, Kasaragod 671121</p>
               </div>
             </div>
             <div class="contact-item">
               <div class="ci-icon">📞</div>
               <div class="ci-text">
                 <h4>Phone</h4>
-                <p><a href="tel:+919400000000" style="color:rgba(255,255,255,0.6);text-decoration:none;">+91 94000
-                    00000</a> · Mon–Sat, 9 AM–6 PM</p>
+                <p><a href="tel:+917306318913" style="color:rgba(255,255,255,0.6);text-decoration:none;">+91 73063 18913</a> · Mon–Sat, 9 AM–6 PM</p>
               </div>
             </div>
             <div class="contact-item">
-              <div class="ci-icon">✉️</div>
+              <div class="ci-icon">📧</div>
               <div class="ci-text">
                 <h4>Email</h4>
-                <p><a href="mailto:info@livewirekasaragod.in"
-                    style="color:rgba(255,255,255,0.6);text-decoration:none;">info@livewirekasaragod.in</a></p>
+                <p><a href="mailto:kl.kasaragod@livewireindia.com"
+                    style="color:rgba(255,255,255,0.6);text-decoration:none;">kl.kasaragod@livewireindia.com</a></p>
               </div>
             </div>
             <div class="contact-item">
               <div class="ci-icon">💬</div>
               <div class="ci-text">
                 <h4>WhatsApp</h4>
-                <p><a href="https://wa.me/919400000000" target="_blank" rel="noopener"
-                    style="color:rgba(255,255,255,0.6);text-decoration:none;">+91 94000 00000</a> · Instant Reply</p>
+                <p><a href="https://wa.me/917306318913" target="_blank" rel="noopener"
+                    style="color:rgba(255,255,255,0.6);text-decoration:none;">+91 73063 18913</a> · Instant Reply</p>
               </div>
             </div>
           </div>
@@ -3852,11 +3263,10 @@
               <option>Ethical Hacking</option>
               <option>Cybersecurity</option>
               <option>AWS Cloud</option>
-              <option>DevOps</option>
             </select>
           </div>
           <div class="form-group"><label>Message (Optional)</label><textarea class="form-group"
-              style="background:rgba(255,255,255,0.08);border:1px solid rgba(255,255,255,0.15);color:#fff;padding:11px 14px;border-radius:11px;font-family:'DM Sans',sans-serif;font-size:0.88rem;outline:none;width:100%;resize:vertical;min-height:80px;"
+              style="background:rgba(255,255,255,0.08);border:1px solid rgba(255,255,255,0.15);color:#fff;padding:11px 14px;border-radius:11px;font-family:'Poppins',sans-serif;font-size:0.88rem;outline:none;width:100%;resize:vertical;min-height:80px;"
               placeholder="Any questions?"></textarea></div>
           <button class="btn-submit"
             onclick="this.textContent='✅ Submitted! We\'ll call you soon.';this.style.background='#059669';this.disabled=true;">Book
@@ -3868,7 +3278,9 @@
 
   <!-- FOOTER -->
   <footer>
-    <div class="ft-logo">Live<span>Wire</span></div>
+    <div class="ft-logo">
+      <img src="livewirelogo.png" alt="Livewire Kasaragod logo">
+    </div>
     <p>Kasaragod's Premier IT Training Institute — Shaping the Future of Technology</p>
     <nav aria-label="Footer navigation"
       style="margin:18px 0;display:flex;flex-wrap:wrap;gap:14px;justify-content:center;">
@@ -3892,19 +3304,19 @@
         onmouseover="this.style.color='#fff'" onmouseout="this.style.color='rgba(255,255,255,0.6)'">Contact</a>
     </nav>
     <div style="display:flex;justify-content:center;gap:16px;margin-bottom:14px;">
-      <a href="https://wa.me/919400000000" target="_blank" rel="noopener" aria-label="WhatsApp"
+      <a href="https://wa.me/917306318913" target="_blank" rel="noopener" aria-label="WhatsApp"
         style="color:rgba(255,255,255,0.5);font-size:1.2rem;text-decoration:none;transition:color 0.2s;"
         onmouseover="this.style.color='#25d366'" onmouseout="this.style.color='rgba(255,255,255,0.5)'">💬</a>
-      <a href="mailto:info@livewirekasaragod.in" aria-label="Email us"
+      <a href="mailto:kl.kasaragod@livewireindia.com" aria-label="Email us"
         style="color:rgba(255,255,255,0.5);font-size:1.2rem;text-decoration:none;transition:color 0.2s;"
         onmouseover="this.style.color='#fff'" onmouseout="this.style.color='rgba(255,255,255,0.5)'">✉️</a>
-      <a href="tel:+919400000000" aria-label="Call us"
+      <a href="tel:+917306318913" aria-label="Call us"
         style="color:rgba(255,255,255,0.5);font-size:1.2rem;text-decoration:none;transition:color 0.2s;"
         onmouseover="this.style.color='#fff'" onmouseout="this.style.color='rgba(255,255,255,0.5)'">📞</a>
     </div>
     <p style="margin-top:4px;">© 2026 Livewire Kasaragod. All rights reserved.</p>
-    <p style="margin-top:6px;font-size:0.76rem;">📍 Main Road, Kasaragod, Kerala – 671121 &nbsp;|&nbsp; <a
-        href="mailto:info@livewirekasaragod.in" style="color:rgba(255,255,255,0.5);">info@livewirekasaragod.in</a></p>
+    <p style="margin-top:6px;font-size:0.76rem;">Location: 3rd Floor, Square 9 Mall, New Bus Stand Jn, Kasaragod 671121 &nbsp;|&nbsp; <a
+        href="mailto:kl.kasaragod@livewireindia.com" style="color:rgba(255,255,255,0.5);">kl.kasaragod@livewireindia.com</a></p>
   </footer>
 
   <!-- ========================
@@ -4014,106 +3426,6 @@
     /* ================================
        SKILLS CANVAS
     ================================ */
-    const sc = document.getElementById('skillsCanvas');
-    const ctx = sc.getContext('2d');
-    const skillNodes = [
-      { id: 'ai', label: 'AI & ML', x: 0, y: 0, r: 52, color: '#1a3bcc', emoji: '🤖', tools: ['Python', 'TensorFlow', 'PyTorch', 'Scikit-learn', 'Keras', 'OpenCV', 'NLTK'], desc: 'Artificial Intelligence & Machine Learning — the most in-demand tech skill globally.' },
-      { id: 'web', label: 'Web Dev', x: 0, y: 0, r: 46, color: '#059669', emoji: '🌐', tools: ['React', 'Node.js', 'Express', 'MongoDB', 'PostgreSQL', 'CSS', 'TypeScript'], desc: 'Full-stack web development for building modern, scalable applications.' },
-      { id: 'sec', label: 'Security', x: 0, y: 0, r: 44, color: '#e81c2a', emoji: '🔐', tools: ['Kali Linux', 'Metasploit', 'Nmap', 'Wireshark', 'Burp Suite', 'OWASP', 'Nessus'], desc: 'Cybersecurity & ethical hacking to protect and audit digital systems.' },
-      { id: 'data', label: 'Data Science', x: 0, y: 0, r: 42, color: '#7c3aed', emoji: '📊', tools: ['Pandas', 'NumPy', 'Matplotlib', 'Power BI', 'Tableau', 'SQL', 'Spark'], desc: 'Data analysis and visualization to derive actionable business insights.' },
-      { id: 'cloud', label: 'Cloud', x: 0, y: 0, r: 40, color: '#d97706', emoji: '☁️', tools: ['AWS', 'Docker', 'Kubernetes', 'Terraform', 'Jenkins', 'Grafana', 'Ansible'], desc: 'Cloud infrastructure and DevOps automation for scalable deployments.' },
-      { id: 'mobile', label: 'Mobile', x: 0, y: 0, r: 38, color: '#db2777', emoji: '📱', tools: ['Flutter', 'React Native', 'Dart', 'Firebase', 'Swift', 'Kotlin', 'Expo'], desc: 'Cross-platform mobile app development for iOS and Android.' },
-    ];
-    let activeSkill = null, skillAnim = 0, canvasW, canvasH;
-
-    function resizeSC() {
-      canvasW = sc.parentElement.offsetWidth;
-      canvasH = sc.parentElement.offsetHeight;
-      sc.width = canvasW; sc.height = canvasH;
-      const cx = canvasW / 2, cy = canvasH / 2;
-      const angles = [0, 60, 120, 180, 240, 300];
-      const radii = [Math.min(canvasW, canvasH) * 0.28];
-      skillNodes.forEach((n, i) => { n.x = cx + Math.cos(angles[i] * Math.PI / 180) * radii[0]; n.y = cy + Math.sin(angles[i] * Math.PI / 180) * radii[0]; });
-    }
-    resizeSC(); window.addEventListener('resize', resizeSC);
-
-    sc.addEventListener('click', e => {
-      const rect = sc.getBoundingClientRect();
-      const mx = e.clientX - rect.left, my = e.clientY - rect.top;
-      let hit = null;
-      skillNodes.forEach(n => { if (Math.hypot(mx - n.x, my - n.y) < n.r + 8) hit = n; });
-      activeSkill = (hit && hit.id === activeSkill?.id) ? null : hit;
-      if (hit) {
-        document.getElementById('sipTitle').textContent = hit.emoji + ' ' + hit.label;
-        document.getElementById('sipDesc').textContent = hit.desc;
-        document.getElementById('sipTools').innerHTML = hit.tools.map(t => `<span class="sip-tool">${t}</span>`).join('');
-      }
-    });
-
-    sc.addEventListener('mousemove', e => {
-      const rect = sc.getBoundingClientRect();
-      const mx = e.clientX - rect.left, my = e.clientY - rect.top;
-      sc.style.cursor = skillNodes.some(n => Math.hypot(mx - n.x, my - n.y) < n.r + 8) ? 'pointer' : 'default';
-    });
-
-    // Touch support for skills canvas (mobile)
-    sc.addEventListener('touchstart', e => {
-      e.preventDefault();
-      const touch = e.touches[0];
-      const rect = sc.getBoundingClientRect();
-      const mx = touch.clientX - rect.left, my = touch.clientY - rect.top;
-      let hit = null;
-      skillNodes.forEach(n => { if (Math.hypot(mx - n.x, my - n.y) < n.r + 12) hit = n; });
-      activeSkill = (hit && hit.id === activeSkill?.id) ? null : hit;
-      if (hit) {
-        document.getElementById('sipTitle').textContent = hit.emoji + ' ' + hit.label;
-        document.getElementById('sipDesc').textContent = hit.desc;
-        document.getElementById('sipTools').innerHTML = hit.tools.map(t => `<span class="sip-tool">${t}</span>`).join('');
-      }
-    }, { passive: false });
-
-    (function drawSkills() {
-      requestAnimationFrame(drawSkills);
-      skillAnim += 0.02;
-      ctx.clearRect(0, 0, canvasW, canvasH);
-      const cx = canvasW / 2, cy = canvasH / 2;
-      // Center hub
-      ctx.save();
-      const grad = ctx.createRadialGradient(cx, cy, 0, cx, cy, 40);
-      grad.addColorStop(0, 'rgba(26,59,204,0.9)');
-      grad.addColorStop(1, 'rgba(232,28,42,0.7)');
-      ctx.fillStyle = grad;
-      ctx.shadowBlur = 24; ctx.shadowColor = 'rgba(26,59,204,0.5)';
-      ctx.beginPath(); ctx.arc(cx, cy, 28 + Math.sin(skillAnim) * 4, 0, Math.PI * 2); ctx.fill();
-      ctx.fillStyle = '#fff'; ctx.font = 'bold 13px Syne,sans-serif';
-      ctx.textAlign = 'center'; ctx.textBaseline = 'middle';
-      ctx.shadowBlur = 0; ctx.fillText('⚡', cx, cy);
-      ctx.restore();
-      // Lines + Nodes
-      skillNodes.forEach((n, i) => {
-        const pulse = Math.sin(skillAnim + i) * 4;
-        ctx.save();
-        ctx.strokeStyle = n.color; ctx.lineWidth = 1.5; ctx.globalAlpha = 0.25;
-        ctx.setLineDash([5, 8]); ctx.lineDashOffset = -skillAnim * 10;
-        ctx.beginPath(); ctx.moveTo(cx, cy); ctx.lineTo(n.x, n.y); ctx.stroke();
-        ctx.restore();
-        ctx.save();
-        const isActive = activeSkill?.id === n.id;
-        const r = n.r + (isActive ? 8 : pulse);
-        ctx.shadowBlur = isActive ? 28 : 14; ctx.shadowColor = n.color;
-        const g = ctx.createRadialGradient(n.x, n.y, 0, n.x, n.y, r);
-        g.addColorStop(0, n.color); g.addColorStop(1, n.color + '88');
-        ctx.fillStyle = g; ctx.beginPath(); ctx.arc(n.x, n.y, r, 0, Math.PI * 2); ctx.fill();
-        if (isActive) { ctx.strokeStyle = '#fff'; ctx.lineWidth = 2.5; ctx.stroke(); }
-        ctx.fillStyle = '#fff'; ctx.font = `${r * 0.5}px serif`;
-        ctx.textAlign = 'center'; ctx.textBaseline = 'middle';
-        ctx.shadowBlur = 0; ctx.fillText(n.emoji, n.x, n.y - 6);
-        ctx.font = `bold ${Math.max(9, r * 0.22)}px Syne,sans-serif`;
-        ctx.fillText(n.label, n.x, n.y + r * 0.42);
-        ctx.restore();
-      });
-    })();
-
     /* ================================
        AI CAREER FINDER
     ================================ */
@@ -4141,7 +3453,7 @@
         web: { course: 'Full-Stack Web Development', salary: '₹5–12 LPA', desc: 'Great choice! Full-stack developers can build complete products from scratch. High demand across all industries.', roadmap: ['HTML/CSS & JavaScript Basics', 'React Frontend Development', 'Node.js & Backend APIs', 'Database Design (SQL + MongoDB)', 'Deployment & Portfolio Projects'], skills: ['React', 'Node.js', 'TypeScript', 'MongoDB', 'PostgreSQL', 'Docker', 'Git'] },
         security: { course: 'Ethical Hacking & CEH Prep', salary: '₹7–16 LPA', desc: 'Cybersecurity is a booming field with a massive talent gap. You\'ll be equipped to protect critical systems.', roadmap: ['Networking & Linux Fundamentals', 'Web Application Security', 'Network Penetration Testing', 'Advanced Exploitation Techniques', 'CEH Certification Exam'], skills: ['Kali Linux', 'Metasploit', 'Burp Suite', 'Python', 'Wireshark', 'OWASP', 'Nmap'] },
         data: { course: 'Data Science & Analytics', salary: '₹5–11 LPA', desc: 'Data scientists are the decision-makers behind modern businesses. You\'ll turn raw data into business insights.', roadmap: ['Python & Statistics', 'Data Wrangling with Pandas', 'Visualization (Matplotlib, Tableau)', 'Machine Learning for Data', 'Business Intelligence & Reporting'], skills: ['Python', 'Pandas', 'SQL', 'Power BI', 'Tableau', 'Scikit-learn', 'Excel'] },
-        cloud: { course: 'AWS Cloud & DevOps', salary: '₹8–18 LPA', desc: 'Cloud is the backbone of modern tech. AWS & DevOps engineers command some of the highest salaries in the industry.', roadmap: ['Cloud Fundamentals & AWS Core', 'Containerization with Docker', 'Orchestration with Kubernetes', 'CI/CD Pipeline with Jenkins', 'AWS Certification Exam'], skills: ['AWS', 'Docker', 'Kubernetes', 'Terraform', 'Jenkins', 'Linux', 'Python'] },
+        cloud: { course: 'AWS AWS Cloud', salary: '₹8–18 LPA', desc: 'Cloud is the backbone of modern tech. AWS professionals help businesses run scalable, secure and reliable infrastructure.', roadmap: ['Cloud Fundamentals & AWS Core', 'Compute, Storage & Networking', 'IAM, Security & Monitoring', 'Deployment Architecture & Operations', 'AWS Certification Exam'], skills: ['AWS', 'EC2', 'S3', 'IAM', 'VPC', 'CloudWatch', 'Linux'] },
       };
       const r = results[int] || results.ai;
       document.getElementById('res-course').textContent = r.course;
@@ -4173,7 +3485,7 @@
       webdev: { title: 'Market Demand — Full-Stack', pct: 88, companies: ['Infosys', 'Cognizant', 'Flipkart', 'Zomato', 'Razorpay', 'HCL', 'Accenture'], gaps: [['React Advanced', 'High Demand'], ['TypeScript', 'Medium Demand'], ['System Design', 'Critical']], time: '5–6 Months', salary: '₹5–12 LPA' },
       cyber: { title: 'Market Demand — Cybersecurity', pct: 91, companies: ['Deloitte', 'KPMG', 'IBM', 'HCL', 'DRDO', 'TATA', 'Wipro'], gaps: [['Cloud Security', 'Critical'], ['Incident Response', 'Very High'], ['Zero Trust Arch', 'High']], time: '3–4 Months', salary: '₹7–16 LPA' },
       data: { title: 'Market Demand — Data Science', pct: 86, companies: ['Amazon', 'Flipkart', 'Paytm', 'PhonePe', 'Mu Sigma', 'EXL', 'Genpact'], gaps: [['ML Engineering', 'High Demand'], ['Big Data (Spark)', 'Medium'], ['Data Storytelling', 'High']], time: '4–5 Months', salary: '₹5–11 LPA' },
-      cloud: { title: 'Market Demand — Cloud/DevOps', pct: 89, companies: ['AWS', 'Azure', 'GCP', 'Capgemini', 'TCS', 'IBM', 'NTT Data'], gaps: [['Kubernetes', 'Very High'], ['IaC (Terraform)', 'Critical'], ['FinOps', 'Growing']], time: '2–3 Months', salary: '₹8–18 LPA' },
+      cloud: { title: 'Market Demand — AWS Cloud', pct: 89, companies: ['AWS', 'Azure', 'GCP', 'Capgemini', 'TCS', 'IBM', 'NTT Data'], gaps: [['AWS Architecture', 'Very High'], ['Cloud Security', 'Critical'], ['FinOps', 'Growing']], time: '2–3 Months', salary: '₹8–18 LPA' },
     };
     function updateMeter(el, key) {
       document.querySelectorAll('.meter-opt').forEach(o => o.classList.remove('active'));
@@ -4187,15 +3499,6 @@
       document.getElementById('mr-salary').textContent = d.salary;
       const bar = document.getElementById('mr-bar');
       bar.style.width = '0'; setTimeout(() => { bar.style.width = d.pct + '%'; }, 100);
-    }
-
-    /* ================================
-       DASHBOARD PORTAL TABS
-    ================================ */
-    function switchPortalTab(el, tab) {
-      document.querySelectorAll('.portal-tab').forEach(t => t.classList.remove('active'));
-      el.classList.add('active');
-      ['learn', 'code', 'cert'].forEach(t => document.getElementById('tab-' + t).style.display = t === tab ? 'block' : 'none');
     }
 
     /* ================================
@@ -4221,7 +3524,7 @@
        AI CHAT ASSISTANT (LiveBot)
     ================================ */
     const chatKB = {
-      'best course': ['That depends on your interest! 🎯 Tell me: Are you more into AI, coding websites, security, or cloud?', ['AI/ML', 'Full-Stack Dev', 'Cybersecurity', 'Cloud & DevOps']],
+      'best course': ['That depends on your interest! 🎯 Tell me: Are you more into AI, coding websites, security, or cloud?', ['AI/ML', 'Full-Stack Dev', 'Cybersecurity', 'AWS Cloud']],
       'course fee': ['Our fees are very competitive 💰 Typical ranges:\n• AI/ML: ₹25,000–40,000\n• Full-Stack: ₹20,000–35,000\n• Security: ₹18,000–28,000\nEMI options available! Contact us for exact pricing.', ['More about AI/ML', 'Enroll now', 'Talk to counsellor']],
       'next batch': ['🗓 Upcoming batches:\n• Feb 10 — Morning (9AM–12PM) — 4 seats left!\n• Feb 17 — Evening (5PM–8PM) — 8 seats\n• Mar 1 — Weekend batch — 15 seats\n\nSeats fill fast — enroll now!', ['Enroll now', 'Course fees?']],
       'placement': ['Yes! 🚀 We have 100% placement assistance:\n• Dedicated placement cell\n• 50+ hiring partners\n• Mock interviews & resume prep\n• Average salary: ₹6–14 LPA\n• 1200+ placed students!', ['View courses', 'Book demo']],
@@ -4307,19 +3610,6 @@
     document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
 
     /* ================================
-       PROGRESS BARS ANIMATE
-    ================================ */
-    const pbObs = new IntersectionObserver(entries => {
-      entries.forEach(e => {
-        if (e.isIntersecting) {
-          e.target.querySelectorAll('.progress-fill').forEach(b => {
-            setTimeout(() => { b.style.width = b.dataset.width + '%'; }, 300);
-          });
-        }
-      });
-    }, { threshold: 0.3 });
-    document.querySelectorAll('#dashboard-preview').forEach(el => pbObs.observe(el));
-
     /* ================================
        JOB METER DEMAND BAR ANIMATE
     ================================ */
@@ -4376,3 +3666,6 @@
 </body>
 
 </html>
+
+
+
